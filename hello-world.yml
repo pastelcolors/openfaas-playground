@@ -1,0 +1,18 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: https://workers.lyon.com.ph
+functions:
+  hello-world:
+    lang: node
+    handler: ./hello-world
+    image: lyonph/hello-world:latest
+    secrets:
+      - dockerhub
+    limits:
+      cpu: 100m
+      memory: 60Mi
+    requests:
+      cpu: 100m
+      memory: 60Mi
+
